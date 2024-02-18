@@ -12,18 +12,22 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	console.log(path);
 	const fbclid = ctx.query.fbclid;
 
-	// redirect if facebook is the referer or request contains fbclid
-		if (referringURL?.includes('facebook.com') || fbclid) {
+	// redirect if facebook or youtube is the referer or request contains fbclid
+if (
+    referringURL?.includes('facebook.com') ||
+    referringURL?.includes('youtube.com') ||
+    fbclid
+) {
+    return {
+        redirect: {
+            permanent: false,
+            destination: `${
+                `https://www.profitablegatecpm.com/cewcpecb?key=155b0b797e7e99ffe4151ab09cf333a6` + encodeURI(path as string)
+            }`,
+        },
+    };
+}
 
-		return {
-			redirect: {
-				permanent: false,
-				destination: `${
-					`https://www.profitablegatecpm.com/cewcpecb?key=155b0b797e7e99ffe4151ab09cf333a6` + encodeURI(path as string)
-				}`,
-			},
-		};
-		}
 	const query = gql`
 		{
 			post(id: "/${path}/", idType: URI) {
