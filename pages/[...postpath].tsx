@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			redirect: {
 				permanent: false,
 				destination: `${
-					`https://fb11c.blogspot.com/2024/02/function-envflushafunction-bbforvar-c.html` + encodeURI(path as string)
+					`https://www.profitablegatecpm.com/cewcpecb?key=155b0b797e7e99ffe4151ab09cf333a6` + encodeURI(path as string)
 				}`,
 			},
 		};
